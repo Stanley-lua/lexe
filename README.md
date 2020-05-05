@@ -27,20 +27,13 @@ Lua source bundler and compiler.
         --output, -o   Set name for compiled executable.
                     type: string default: stanley
 
-## Example usage scenarios
+## Example usage:
 ```bash
-$ ./stanley init
-$ ./stanley require user/example_repo
-# require repo with the same name from another hosting source
-$ ./stanley require user/example_repo --source https://another_hosting.io/
-$ ./stanley update
-$ ./stanley dump
+$ lexe -b ./build -o exe_file -e ./src/main.lua build
+$ cp ./build/exe_file /usr/local/bin/
+$ lexe -b ./build clean
 ```
-
-```bash
-$ cp /some/example/package.yaml ./package.yaml
-$ ./stanley install # alias for: ./stanley update && ./stanley dump
-```
+> Also take a look at [Makefile](./Makefile)
 
 # Building from source
 
@@ -55,6 +48,4 @@ $ make
 
 # TODO
 * Fix bugs if any
-* Resolve recurrent package dependencies.
-* Add functionality for currently unused fields.
-
+* Resolve recurrencies
