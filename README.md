@@ -39,7 +39,7 @@ $ lexe -b ./build clean
 
 ## Additional requirements
 * __GNU Make__
-* [Stanley](https://wolf2789.github.io/Stanley/)
+* [Stanley](https://stanley-lua.github.io/)
 
 ```bash
 $ git clone https://github.com/Stanley-lua/lexe.git
