@@ -1,4 +1,4 @@
-name: Wolf2789/lexe
+name: Stanley-lua/lexe
 description: Compiler for creating executables from lua source.
 version: 0.1
 author:
@@ -9,5 +9,5 @@ autoload:
     name: lexe
     path: src/lexe.lua
 require:
-  - name: Wolf2789/CLI
-  - name: Wolf2789/File
+  - name: Stanley-lua/CLI
+  - name: Stanley-lua/File
