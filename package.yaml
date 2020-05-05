@@ -1,0 +1,13 @@
+name: Wolf2789/lexe
+description: Compiler for creating executables from lua source.
+version: 0.1
+author:
+  - email: wolf2789@gmail.com
+    name: Dawid Bugajski
+autoload:
+  - type: global
+    name: lexe
+    path: src/lexe.lua
+require:
+  - name: Wolf2789/CLI
+  - name: Wolf2789/File
