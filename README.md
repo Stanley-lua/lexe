@@ -48,4 +48,5 @@ $ make
 
 # TODO
 * Fix bugs if any
-* Resolve recurrencies
+* ~~Problematic file names handling~~
+* ~~Resolve recurrencies~~

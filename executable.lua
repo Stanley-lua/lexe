@@ -1,6 +1,9 @@
 #!/usr/bin/env lua
 require'lib.autoload'
 
+CLI.name = 'LEXE'
+CLI.version = '1.1'
+
 CLI.options = {
     build = {
         description = 'Change build directory path.',
@@ -17,10 +20,14 @@ CLI.options = {
         alias = 'o',
         default = 'stanley'
     },
+    version = {
+        description = 'Print current version and exit.',
+        default = false
+    }
 }
 
 CLI.help = {
-    'Creating executable from Lua source.',
+    'Lua source code bundler and compiler.',
     '\nUsage: %EXEC% [options] command',
     '\nAvailable commands:',
     CLI.printCommands,
@@ -40,9 +47,14 @@ CLI.commands = {
         io.flush()
     end},
 
-    build = { 'Compile source into binary.', function()
+    bundle = { 'Compile source into binary.', function()
         assert(File.exists(CLI:getOption('entry')), 'Specified entry file does not exist! ' .. CLI:getOption('entry'))
         assert(File.exists(CLI:getOption('build')), 'Build directory does not exist! ' .. CLI:getOption('build'))
+        lexe:bundle(CLI:getOption('entry'), CLI:getOption('output'), CLI:getOption('build'))
+    end},
+
+    build = { 'Compile source into binary.', function()
+        assert(File.exists(CLI:getOption('build') .. '/' .. CLI:getOption('output') .. '.lua'), 'Bundled file does not exist! Please use \'bundle\' command first.')
         lexe:compile(CLI:getOption('entry'), CLI:getOption('output'), CLI:getOption('build'))
     end},
 }
